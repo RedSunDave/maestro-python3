@@ -59,9 +59,17 @@ You can run the programs by typing one of the following commands:
 
 ## Make sure to run ./MaestroControlCenter go to the "Serial Settings" tab and change the "Serial Mode" to "USB DUAL PORT"
 
+### Permission issue
+
+* If you find that Linux complains about permissions trying to access the ttyACM device, just add your user to the 'dialout' group by issuing the following:
+
+    sudo adduser $USER dialout
+
+You'll need to reboot for the change to take effect.
+
 ## The Board will not recieve commands if you do not change this.
 
-## *** End Section 1 ***
+## ***End Section 1***
 
 # Section 2: maestro.py - Python3 Support for Pololu Maestro
 
@@ -128,14 +136,6 @@ For use on Windows, you'll need to provide the COM port assigned to the Maestro 
 
     import maestro
     m = maestro.Controller('COM3')
-
-## Permission issue
-
-If you find that Linux complains about permissions trying to access the ttyACM device, just add your user to the 'dialout' group by issuing the following:
-
-    sudo adduser $USER dialout
-
-You'll need to reboot for the change to take effect.
 
 ## Authors
 
